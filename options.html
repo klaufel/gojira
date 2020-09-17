@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="base.css" />
+  </head>
+  <body>
+    <div class="wrapper">
+      <form id="configForm">
+        <div>
+          <label for="jiraBasePath">Your Jira domain</label>
+          <input
+            name="jiraBasePath"
+            id="jiraBasePath"
+            placeholder="https://your-jira.atlassian.net/"
+          />
+        </div>
+        <div>
+          <label for="jiraCompanyName">Company name</label>
+          <input name="jiraCompanyName" id="jiraCompanyName" />
+        </div>
+        <div>
+          <label for="jiraCompanyLogo">Your company logo url</label>
+          <input name="jiraCompanyLogo" id="jiraCompanyLogo" />
+        </div>
+        <button type="submit">Save</button>
+      </form>
+    </div>
+  </body>
+  <script src="options.js"></script>
+</html>
