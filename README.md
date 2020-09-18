@@ -1,4 +1,7 @@
-<h1 align="center">🦖 GoJIRA<br/></h1>
+<h1 align="center">
+  🦖 GoJIRA
+  <br/><br/>
+</h1>
 
 <h4 align="center">An awesome JIRA browser extension to provides useful tools!</h4>
 
