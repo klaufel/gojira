@@ -18,7 +18,7 @@ chrome.storage.sync.get(
   ["basePath", "companyName", "companyLogo"],
   ({ basePath, companyName, companyLogo }) => {
     companyInfo.innerHTML = `
-      ${companyLogo && `<img src="${companyLogo}" alt="${companyName}" />`}
+      ${companyLogo ? `<img src="${companyLogo}" alt="${companyName}" />` : ""}
       <h1>${companyName || "Jira utils extension"}</h1>
       <span>${basePath || "Needed config yout jira domain"}</span>
     `;
