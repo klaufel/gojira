@@ -11,7 +11,7 @@
 </p>
 
 <p align="center">
-  <img src="https://user-images.githubusercontent.com/1427623/93539909-5e1fd380-f952-11ea-99c9-9cf6f9bad49e.png" alt="GoJIRA browser extension for JIRA">
+  <img src="https://user-images.githubusercontent.com/1427623/93541046-b5737300-f955-11ea-9032-26f043dda03e.png"  width="250" height="458" alt="GoJIRA browser extension for JIRA">
 </p>
 
 ## :fire: Overview
