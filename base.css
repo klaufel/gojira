@@ -13,10 +13,21 @@ body {
   text-decoration-skip-ink: auto;
 }
 
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
 .wrapper {
   display: flex;
   position: relative;
   overflow: hidden;
+  flex-direction: column;
+}
+
+.wrapper--form {
+  max-width: 600px;
+  margin: 40px auto;
 }
 
 .tabs {
@@ -53,7 +64,7 @@ body {
 }
 
 .container {
-  width: 200px;
+  width: 240px;
   padding: 16px;
 }
 .container div {
@@ -90,6 +101,17 @@ button {
   justify-content: center;
 }
 
+.button-group {
+  display: flex;
+}
+
+.button-group button:first-child {
+  margin-right: 4px;
+}
+
+.button-group button:last-child {
+  margin-left: 4px;
+}
 button svg {
   margin-right: 8px;
 }
@@ -179,6 +201,7 @@ form button svg {
   margin-right: 0;
 }
 hr {
+  width: 100%;
   border: 0;
   height: 1px;
   border-top: 1px solid #f4f5f7;
@@ -186,4 +209,30 @@ hr {
 
 #config {
   cursor: pointer;
+}
+
+.wrapper--form h1 {
+  font-size: 26px;
+  font-weight: 700;
+}
+
+.form {
+  width: 100%;
+  padding: 20px 0 20px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.form button[type="submit"] {
+  margin: 20px 0 0;
+}
+
+.form-control {
+  padding-bottom: 8px;
+}
+
+#messages {
+  color: green;
+  font-weight: 700;
 }

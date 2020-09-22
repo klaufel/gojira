@@ -4,24 +4,13 @@
     <link rel="stylesheet" type="text/css" href="base.css" />
   </head>
   <body>
-    <div class="wrapper">
-      <form id="configForm">
-        <div>
-          <label for="jiraBasePath">Your Jira domain</label>
-          <input
-            name="jiraBasePath"
-            id="jiraBasePath"
-            placeholder="https://your-jira.atlassian.net/"
-          />
-        </div>
-        <div>
-          <label for="jiraCompanyName">Company name</label>
-          <input name="jiraCompanyName" id="jiraCompanyName" />
-        </div>
-        <div>
-          <label for="jiraCompanyLogo">Your company logo url</label>
-          <input name="jiraCompanyLogo" id="jiraCompanyLogo" />
-        </div>
+    <div class="wrapper wrapper--form">
+      <h1>&#x1f996; GoJIRA</h1>
+      <p>Configure the extension to be a productivity raptor!</p>
+      <hr />
+      <form id="configForm" class="form">
+        <div id="form"></div>
+        <div id="messages"></div>
         <button type="submit">Save</button>
       </form>
     </div>

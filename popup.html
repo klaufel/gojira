@@ -7,11 +7,7 @@
     <div class="wrapper">
       <div class="overlay" id="overlay"></div>
       <div class="tabs" id="tabs">
-        <a
-          target="_blank"
-          href="chrome-extension://idjehedljgdkpmkkohomccmgkmnoakdj/options.html"
-          >Configure extension</a
-        >
+        <a target="_blank" href="options.html">Configure extension</a>
       </div>
       <div class="container">
         <div id="companyInfo"></div>
@@ -23,6 +19,7 @@
               name="viewTaskId"
               id="viewTaskId"
               placeholder="Ticket ID..."
+              required
             />
             <button type="submit">
               <svg
@@ -129,9 +126,78 @@
             View backlog
           </button>
         </div>
-
-        <div>
-          <button id="expandOpenTasks">Expand 'OPEN' tickets</button>
+        <hr />
+        <div class="button-group">
+          <button id="expandOpenTasks">
+            <svg
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              focusable="false"
+              role="presentation"
+              style="transform: rotate(90deg)"
+            >
+              <path
+                fill="currentColor"
+                fill-rule="evenodd"
+                d="M14.995 10.995a1 1 0 0 1 0 1.414l-4.593 4.593a.99.99 0 0 1-1.4-1.4l3.9-3.9-3.9-3.9a.99.99 0 0 1 1.4-1.4l4.593 4.593z"
+              ></path>
+            </svg>
+            Open
+          </button>
+          <button id="expandClosedTickets">
+            <svg
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              focusable="false"
+              role="presentation"
+              style="transform: rotate(90deg)"
+            >
+              <path
+                fill="currentColor"
+                fill-rule="evenodd"
+                d="M14.995 10.995a1 1 0 0 1 0 1.414l-4.593 4.593a.99.99 0 0 1-1.4-1.4l3.9-3.9-3.9-3.9a.99.99 0 0 1 1.4-1.4l4.593 4.593z"
+              ></path>
+            </svg>
+            Closed
+          </button>
+        </div>
+        <div class="button-group">
+          <button id="expandAllTickets">
+            <svg
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              focusable="false"
+              role="presentation"
+              style="transform: rotate(90deg)"
+            >
+              <path
+                fill="currentColor"
+                fill-rule="evenodd"
+                d="M14.995 10.995a1 1 0 0 1 0 1.414l-4.593 4.593a.99.99 0 0 1-1.4-1.4l3.9-3.9-3.9-3.9a.99.99 0 0 1 1.4-1.4l4.593 4.593z"
+              ></path>
+            </svg>
+            All
+          </button>
+          <button id="collapseAllTickets">
+            <svg
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              focusable="false"
+              role="presentation"
+              style="transform: rotate(-90deg)"
+            >
+              <path
+                fill="currentColor"
+                fill-rule="evenodd"
+                d="M14.995 10.995a1 1 0 0 1 0 1.414l-4.593 4.593a.99.99 0 0 1-1.4-1.4l3.9-3.9-3.9-3.9a.99.99 0 0 1 1.4-1.4l4.593 4.593z"
+              ></path>
+            </svg>
+            All
+          </button>
         </div>
         <hr />
         <div
@@ -142,12 +208,11 @@
             align-items: center;
           "
         >
-          <small id="config">Change the workspace</small>
-          <a
-            href="chrome-extension://idjehedljgdkpmkkohomccmgkmnoakdj/options.html"
-            target="_blank"
-            style="line-height: 0"
+          <!--<small id="config">Change the workspace</small>-->
+          <a href="https://github.com/klaufel/gojira" target="_blank"
+            ><small>Be a productivity raptor!</small></a
           >
+          <a href="options.html" target="_blank" style="line-height: 0">
             <svg
               width="24"
               height="24"

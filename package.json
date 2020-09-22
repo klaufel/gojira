@@ -1,0 +1,21 @@
+{
+  "name": "gojira",
+  "version": "0.0.1",
+  "description": "JIRA browser extension to provides useful tools to manage your dashboards and direct links to your most used JIRA dashboards.",
+  "main": "background.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "zip": "zip -r gojira.zip ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/klaufel/gojira.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/klaufel/gojira/issues"
+  },
+  "homepage": "https://github.com/klaufel/gojira#readme"
+}
