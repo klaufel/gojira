@@ -2,14 +2,13 @@
   "name": "GoJIRA",
   "version": "0.0.1",
   "description": "JIRA browser extension to provides useful tools to manage your dashboards and direct links to your most used JIRA dashboards.",
-  "permissions": ["activeTab", "declarativeContent", "storage"],
-  "options_page": "options.html",
+  "permissions": ["activeTab", "tabs", "declarativeContent", "storage"],
+  "options_page": "src/modules/options/options.html",
   "background": {
-    "scripts": ["background.js"],
-    "persistent": true
+    "page": "src/modules/background/background.html"
   },
   "page_action": {
-    "default_popup": "popup.html",
+    "default_popup": "src/modules/popup/popup.html",
     "default_icon": {
       "128": "images/get_started128.png"
     }
@@ -17,5 +16,6 @@
   "icons": {
     "128": "images/get_started128.png"
   },
+  "minimum_chrome_version": "61",
   "manifest_version": 2
 }
