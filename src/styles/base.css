@@ -1,0 +1,267 @@
+:root {
+  --c-light: #ffffff;
+  --c-primary: #172b4d;
+  --ff-base: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  --fs-base: 14px;
+  --lh-base: 16px;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body {
+  background: var(--c-light);
+  color: var(--c-primary);
+  font-family: var(--ff-base);
+  font-size: var(--fs-base);
+  line-height: var(--lh--base);
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.wrapper {
+  display: flex;
+  position: relative;
+  overflow: hidden;
+  flex-direction: column;
+}
+
+.wrapper--form {
+  max-width: 600px;
+  margin: 40px auto;
+}
+
+.tabs {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100px;
+  height: 100%;
+  background: #fff;
+  transform: translateX(-100%);
+  transition: transform 0.2s;
+}
+
+.tabs.is-active {
+  transform: translateX(0);
+}
+
+.overlay {
+  cursor: pointer;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  background: rgba(0, 0, 0, 0.2);
+  height: 100vh;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.2s, visibility 0.2s;
+}
+
+.overlay.is-active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.container {
+  width: 240px;
+  padding: 16px;
+}
+.container div {
+  padding: 8px 0;
+}
+button,
+.button {
+  font: 400 14px Arial;
+  align-items: baseline;
+  border-width: 0px;
+  box-sizing: border-box;
+  display: inline-flex;
+  font-size: inherit;
+  font-style: normal;
+  font-weight: 500;
+  max-width: 100%;
+  text-align: center;
+  text-decoration: none;
+  white-space: nowrap;
+  background: rgb(0, 82, 204);
+  border-radius: 3px;
+  box-shadow: transparent 0px 0px 0px 2px;
+  color: rgb(255, 255, 255);
+  cursor: pointer;
+  height: 2.28571em;
+  line-height: 2.28571em;
+  padding: 0px 8px;
+  transition: background 0.1s ease-out 0s,
+    box-shadow 0.15s cubic-bezier(0.47, 0.03, 0.49, 1.38) 0s;
+  vertical-align: middle;
+  width: auto;
+  margin: 0;
+  outline: none;
+  align-items: center;
+  justify-content: center;
+}
+
+.button-group {
+  display: flex;
+}
+
+.button-group button:first-child {
+  margin-right: 4px;
+}
+
+.button-group button:last-child {
+  margin-left: 4px;
+}
+button svg {
+  margin-right: 8px;
+}
+button:hover {
+  cursor: pointer;
+  text-decoration: inherit;
+  color: rgb(255, 255, 255);
+  background-color: rgba(0, 82, 204, 0.9);
+  box-shadow: transparent 0px 0px 0px 2px;
+}
+
+button:focus {
+  box-shadow: 0 0 0 2px #4c9aff;
+}
+
+small {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  color: #172b4d;
+  font-size: 14px;
+  font-weight: 400;
+  font-style: normal;
+  line-height: 20px;
+  font-size: 12px;
+  color: #6c798f;
+}
+
+input {
+  height: 32px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  color: #172b4d;
+  font-size: 14px;
+  font-weight: 400;
+  font-style: normal;
+  line-height: 20px;
+  background-color: #f4f5f7;
+  border: 1px solid #dfe1e6;
+  padding: 4px 7px 5px;
+  border-radius: 3.01px;
+  box-sizing: border-box;
+  margin: 0;
+  vertical-align: baseline;
+  width: 100%;
+}
+
+.wrapper button {
+  width: 100%;
+  justify-content: center;
+}
+
+#companyInfo {
+  padding-top: 0;
+  margin: 0;
+  font-size: 12px;
+  color: #6c798f;
+}
+
+h1 {
+  font-size: 14px;
+  margin: 0;
+  color: #000;
+}
+
+img {
+  width: 100%;
+  max-width: 16px;
+  height: auto;
+  float: left;
+  margin-top: 2px;
+  margin-right: 6px;
+}
+
+form {
+  display: flex;
+}
+form input {
+  flex: 1 auto;
+}
+form button {
+  flex: 1;
+  margin-left: 8px;
+  align-items: center;
+  justify-content: center;
+}
+form button svg {
+  margin-right: 0;
+}
+hr {
+  width: 100%;
+  border: 0;
+  height: 1px;
+  border-top: 1px solid #f4f5f7;
+}
+
+#config {
+  cursor: pointer;
+}
+
+.wrapper--form h1 {
+  font-size: 26px;
+  font-weight: 700;
+}
+
+.form {
+  width: 100%;
+  padding: 20px 0 20px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.form button[type="submit"] {
+  margin: 20px 0 0;
+}
+
+.form-control {
+  padding-bottom: 8px;
+}
+
+#messages {
+  color: green;
+  font-weight: 700;
+}
+
+.actions-config {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.actions-config svg {
+  width: 80px;
+  height: 80px;
+  fill: #ccc;
+  margin-bottom: 20px;
+}
