@@ -1,63 +1,57 @@
-const INPUT_FORM = [
-  {
-    label: "Your JIRA domain",
-    name: "basePath",
-    placeholder: "https://your-jira.atlassian.net/",
-    type: "url",
-  },
-  {
-    label: "Your company name",
-    name: "companyName",
-  },
-  {
-    label: "Company logo URL",
-    name: "companyLogo",
-    placeholder: "https://...../logo.png",
-    type: "url",
-  },
-  {
-    label: "Board ID",
-    name: "boardId",
-    placeholder: "Number in url ...RapidBoard.jspa?rapidView=4471",
-    type: "number",
-  },
-];
-
-const INPUT_KEYS = INPUT_FORM.map(({ name }) => name);
+import { INPUT_FORM, INPUT_KEYS } from "./config/index.js";
 
 const configForm = document.getElementById("configForm");
 const messages = document.getElementById("messages");
-const form = document.getElementById("form");
+const formOptions = document.getElementById("form");
 
-const genForm = (values) =>
-  (form.innerHTML = INPUT_FORM.map(
-    ({ name, label, type, placeholder }) => `
+const getDomainUrl = (url) => {
+  const split = url?.split("/");
+  return `${split[0]}//${url?.match("//") ? split[2] : split[0]}`;
+};
+
+const genForm = (values) => {
+  formOptions.innerHTML = INPUT_FORM.map(
+    ({ name, label, type, placeholder, required }) => `
         <div class="form-control">
           <label for="${name}">${label}</label>
           <input
-            value="${values?.[name] || ""}"
-            type="${type || "text"}"
-            name="${name}"
             id="${name}"
+            name="${name}"
             placeholder="${placeholder || ""}"
+            type="${type || "text"}"
+            value="${values?.[name] || ""}"
+            ${required && `required`}
           />
         </div> 
       `
-  ));
-
-chrome.storage.sync.get(INPUT_KEYS, (values) => genForm(values));
-
-configForm.onsubmit = (event) => {
-  event.preventDefault();
-  messages.innerHTML = "";
-
-  chrome.storage.sync.set(
-    {
-      basePath: document.getElementById("basePath")?.value,
-      companyName: document.getElementById("companyName")?.value,
-      companyLogo: document.getElementById("companyLogo")?.value,
-      boardId: document.getElementById("boardId")?.value,
-    },
-    () => (messages.innerHTML = "<span>Config updated!</span>")
   );
 };
+
+const loadConfig = () => {
+  chrome.storage.sync.get(INPUT_KEYS, (values) => genForm(values));
+};
+
+const saveConfig = () => {
+  configForm.addEventListener("submit", (event) => {
+    event.preventDefault();
+    messages.innerHTML = "";
+
+    chrome.storage.sync.set(
+      {
+        basePath: getDomainUrl(document.getElementById("basePath")?.value),
+        companyName: document.getElementById("companyName")?.value,
+        companyLogo: document.getElementById("companyLogo")?.value,
+        boardId: document.getElementById("boardId")?.value,
+      },
+      () => {
+        messages.innerHTML = "<span>Config updated!</span>";
+        setTimeout(() => (messages.innerHTML = ""), 1000);
+      }
+    );
+  });
+};
+
+document.addEventListener("DOMContentLoaded", () => {
+  loadConfig();
+  saveConfig();
+});
