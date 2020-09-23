@@ -1,3 +1,4 @@
+import routes from "../../config/routes.js";
 import {
   executeScript,
   createTab,
@@ -41,22 +42,30 @@ const collapseAllTicketsCode = `document.querySelectorAll('.ghx-swimlane').forEa
 const setListeners = ({ basePath, boardId }) => {
   if (basePath && boardId) {
     viewSprint.addEventListener("click", () =>
-      createTab(`${basePath}/secure/RapidBoard.jspa?rapidView=${boardId}`)
+      createTab(
+        routes("SPRINT")
+          .replace("%{basePath}", basePath)
+          .replace("%{boardId}", boardId)
+      )
     );
 
     viewBacklog.addEventListener("click", () =>
       createTab(
-        `${basePath}/secure/RapidBoard.jspa?rapidView=${boardId}&view=planning`
+        routes("BACKLOG")
+          .replace("%{basePath}", basePath)
+          .replace("%{boardId}", boardId)
       )
     );
 
     viewTask.addEventListener("submit", () => {
       const id = viewTaskId?.value;
-      createTab(`${basePath}/secure/QuickSearch.jspa?searchString=${id}`);
+      createTab(
+        routes("SEARCH").replace("%{basePath}", basePath).replace("%{id}", id)
+      );
     });
 
     newTask.addEventListener("click", () =>
-      createPopup(`${basePath}/secure/CreateIssue!default.jspa`)
+      createPopup(routes("NEW_ISSUE").replace("%{basePath}", basePath))
     );
 
     expandOpenTasks.addEventListener("click", () =>
