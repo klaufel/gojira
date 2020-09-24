@@ -1,5 +1,5 @@
 <h1 align="center">
-  🦖 GoJIRA
+  🔷 GoJIRA
   <br/><br/>
 </h1>
 
@@ -11,7 +11,7 @@
 </p>
 
 <p align="center">
-  <img src="https://user-images.githubusercontent.com/1427623/93541046-b5737300-f955-11ea-9032-26f043dda03e.png"  width="250" height="458" alt="GoJIRA browser extension for JIRA">
+  <img src="https://user-images.githubusercontent.com/1427623/94141222-b718cb80-fe6c-11ea-919e-324926cd576a.png"  width="236" height="533" alt="GoJIRA browser extension for JIRA">
 </p>
 
 ## :fire: Overview
