@@ -162,11 +162,14 @@ img {
 
 /* Form control */
 .form-control {
-  display: flex;
   padding: var(--s-s) 0;
 }
 
 /* Form group */
+.form-group {
+  display: flex;
+}
+
 .form-group .input {
   flex: 1 auto;
 }
