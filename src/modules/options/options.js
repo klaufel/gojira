@@ -2,8 +2,8 @@ import { _browser } from "../../config/repository.js";
 import { INPUT_FORM, INPUT_KEYS } from "../../config/index.js";
 
 const configForm = document.getElementById("configForm");
-const messages = document.getElementById("messages");
 const formOptions = document.getElementById("form");
+const messages = document.querySelector(".messages");
 
 const getDomainUrl = (url) => {
   const split = url?.split("/");
@@ -16,6 +16,7 @@ const genForm = (values) => {
         <div class="form-control">
           <label for="${name}">${label}</label>
           <input
+            class="input"
             id="${name}"
             name="${name}"
             placeholder="${placeholder || ""}"

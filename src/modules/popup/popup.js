@@ -18,7 +18,7 @@ const expandClosedIssues = document.querySelector(".js-expand-closed-issues");
 const expandAllIssues = document.querySelector(".js-expand-all-issues");
 const collapseAllIssues = document.querySelector(".js-collapse-all-issues");
 
-const companyInfo = document.querySelector(".company-info");
+const header = document.querySelector(".header");
 const actionsContainer = document.querySelector(".actions");
 
 const expandOpenIssuesCode = `document.querySelectorAll('.ghx-swimlane').forEach(item =>
@@ -98,10 +98,16 @@ const setListeners = ({ basePath, boardId }) => {
 };
 
 const setHeader = ({ basePath, companyName, companyLogo }) => {
-  companyInfo.innerHTML = `
-      ${companyLogo ? `<img src="${companyLogo}" alt="${companyName}" />` : ""}
-      <h1>${companyName || "JIRA utils extension"}</h1>
-      <span>${basePath || "Needed config yout JIRA domain"}</span>
+  header.innerHTML = `
+      ${
+        companyLogo
+          ? `<img class="header__logo" src="${companyLogo}" alt="${companyName}" />`
+          : ""
+      }
+      <h1 class="header__title">${companyName || "JIRA utils extension"}</h1>
+      <span class="header__description">${
+        basePath || "Needed config JIRA domain"
+      }</span>
     `;
 };
 
