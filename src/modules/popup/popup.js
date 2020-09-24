@@ -6,8 +6,8 @@ import {
   syncStorage,
 } from "../../config/repository.js";
 
-const searchIssue = document.getElementById("viewTask");
-const searchIssueId = document.getElementById("viewTaskId");
+const searchIssue = document.querySelector(".js-search-issue");
+const searchIssueId = document.querySelector(".js-search-issue-id");
 
 const newIssue = document.querySelector(".js-new-issue");
 const viewSprint = document.querySelector(".js-view-sprint");
@@ -18,9 +18,8 @@ const expandClosedIssues = document.querySelector(".js-expand-closed-issues");
 const expandAllIssues = document.querySelector(".js-expand-all-issues");
 const collapseAllIssues = document.querySelector(".js-collapse-all-issues");
 
+const companyInfo = document.querySelector(".company-info");
 const actionsContainer = document.querySelector(".actions");
-
-const companyInfo = document.getElementById("companyInfo");
 
 const expandOpenIssuesCode = `document.querySelectorAll('.ghx-swimlane').forEach(item =>
   item.querySelectorAll('.ghx-swimlane-header.ghx-done')?.length === 0
@@ -114,3 +113,7 @@ const init = (params) => {
 document.addEventListener("DOMContentLoaded", () =>
   syncStorage(["basePath", "companyName", "companyLogo", "boardId"], init)
 );
+
+document.addEventListener("DOMContentLoaded", () => {
+  searchIssueId.focus();
+});
