@@ -6,190 +6,174 @@
   </head>
   <body>
     <div class="wrapper">
-      <div class="overlay" id="overlay"></div>
-      <div class="tabs" id="tabs">
-        <a target="_blank" href="/src/modules/options/options.html"
-          >Configure extension</a
-        >
-      </div>
       <div class="container">
-        <div id="companyInfo"></div>
+        <div class="company-info"></div>
         <hr />
         <div class="actions">
-          <div>
-            <form id="viewTask">
+          <form class="form js-search-issue">
+            <div class="form-control form-group">
               <input
-                type="text"
-                name="viewTaskId"
-                id="viewTaskId"
+                class="input js-search-issue-id"
+                name="searchIssueId"
                 placeholder="Ticket ID..."
                 required
+                type="text"
               />
               <button class="button" type="submit">
-                <svg width="16px" height="16px" viewBox="0 0 16 16">
-                  <path
-                    d="M7 12C4.23858 12 2 9.76142 2 7C2 4.23858 4.23858 2 7 2C9.76142 2 12 4.23858 12 7C12 8.15126 11.6109 9.21164 10.9571 10.0568L13.5846 12.7302C13.8427 12.9928 13.839 13.4149 13.5764 13.673C13.3139 13.9311 12.8918 13.9274 12.6337 13.6648L10.0086 10.9939C9.17144 11.6255 8.12945 12 7 12ZM10.6667 7C10.6667 9.02504 9.02504 10.6667 7 10.6667C4.97496 10.6667 3.33333 9.02504 3.33333 7C3.33333 4.97496 4.97496 3.33333 7 3.33333C9.02504 3.33333 10.6667 4.97496 10.6667 7Z"
-                  ></path>
-                  <mask
-                    id="mask0"
-                    mask-type="alpha"
-                    maskUnits="userSpaceOnUse"
-                    x="2"
-                    y="2"
-                    width="12"
-                    height="12"
+                <svg height="21" viewBox="0 0 21 21" width="21">
+                  <g
+                    fill="none"
+                    fill-rule="evenodd"
+                    stroke="#ffffff"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
                   >
-                    <path
-                      fill-rule="evenodd"
-                      clip-rule="evenodd"
-                      d="M7 12C4.23858 12 2 9.76142 2 7C2 4.23858 4.23858 2 7 2C9.76142 2 12 4.23858 12 7C12 8.15126 11.6109 9.21164 10.9571 10.0568L13.5846 12.7302C13.8427 12.9928 13.839 13.4149 13.5764 13.673C13.3139 13.9311 12.8918 13.9274 12.6337 13.6648L10.0086 10.9939C9.17144 11.6255 8.12945 12 7 12ZM10.6667 7C10.6667 9.02504 9.02504 10.6667 7 10.6667C4.97496 10.6667 3.33333 9.02504 3.33333 7C3.33333 4.97496 4.97496 3.33333 7 3.33333C9.02504 3.33333 10.6667 4.97496 10.6667 7Z"
-                      fill="currentColor"
-                    ></path>
-                  </mask>
-                  <g mask="url(#mask0)">
-                    <path
-                      fill-rule="evenodd"
-                      clip-rule="evenodd"
-                      d="M0 16H16V0H0V16Z"
-                    ></path>
+                    <circle cx="8.5" cy="8.5" r="5" />
+                    <path d="m17.571 17.5-5.571-5.5" />
                   </g>
                 </svg>
               </button>
-            </form>
-          </div>
+            </div>
+          </form>
           <hr />
-          <div>
+          <div class="form-control">
             <button class="button js-new-issue">
-              <svg
-                width="16"
-                height="16"
-                viewBox="0 0 24 24"
-                focusable="false"
-                role="presentation"
-              >
-                <path
-                  d="M11.998 4A5.997 5.997 0 0 0 6 9.998c0 2.218 2.288 4.484 2.288 4.484.39.387.71 1.112.71 1.611 0 .499.45.907 1 .907h4c.55 0 1-.408 1-.907 0-.499.32-1.224.71-1.611 0 0 2.288-2.266 2.288-4.484A5.997 5.997 0 0 0 11.998 4zm2.965 15c0-.55-.45-1-1-1h-4c-.55 0-1 .45-1 1v.003c0 .55.45 1 1 1h4c.55 0 1-.45 1-1V19z"
-                  fill="currentColor"
+              <svg height="21" viewBox="0 0 21 21" width="21">
+                <g
+                  fill="none"
                   fill-rule="evenodd"
-                ></path>
+                  stroke="#ffffff"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  transform="translate(3 2)"
+                >
+                  <path
+                    d="m7 2.5h-4.5c-1.1045695 0-2 .8954305-2 2v9.0003682c0 1.1045695.8954305 2 2 2h10c1.1045695 0 2-.8954305 2-2v-4.5003682"
+                  />
+                  <path
+                    d="m9.49086518-.60570641c.79784342.01307433 1.43777452.66357797 1.43777452 1.46152846v9.87574095l-1.41421359 2.8284271-1.41421356-2.8284271-.04115759-9.92287518c-.00322702-.77801908.62486604-1.41134419 1.40288513-1.41457122.00964205-.00003999.01928425.00001901.02892509.00017699z"
+                    transform="matrix(.70710678 .70710678 -.70710678 .70710678 7.360659 -4.816202)"
+                  />
+                  <path d="m12.5 3.5.953 1" />
+                </g>
               </svg>
-              Create ticket
+              Create issue
             </button>
           </div>
           <hr />
-          <div>
+          <div class="form-control">
             <button class="button js-view-sprint">
-              <svg
-                width="16"
-                height="16"
-                viewBox="0 0 24 24"
-                focusable="false"
-                role="presentation"
-              >
-                <g fill="currentColor">
+              <svg height="21" viewBox="0 0 21 21" width="21">
+                <g fill="none" fill-rule="evenodd" transform="translate(3 5)">
+                  <g
+                    stroke="#ffffff"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path d="m4.5 1.5h8" />
+                    <path d="m4.5 5.498h5" />
+                    <path d="m4.5 9.5h8" />
+                  </g>
                   <path
-                    d="M4 18h16.008C20 18 20 6 20 6H3.992C4 6 4 18 4 18zM2 5.994C2 4.893 2.898 4 3.99 4h16.02C21.108 4 22 4.895 22 5.994v12.012A1.997 1.997 0 0 1 20.01 20H3.99A1.994 1.994 0 0 1 2 18.006V5.994z"
-                  ></path>
-                  <path d="M8 6v12h2V6zm6 0v12h2V6z"></path>
+                    d="m1.49884033 2.5c.5 0 1-.5 1-1s-.5-1-1-1-.99884033.5-.99884033 1 .49884033 1 .99884033 1zm0 4c.5 0 1-.5 1-1s-.5-1-1-1-.99884033.5-.99884033 1 .49884033 1 .99884033 1zm0 4c.5 0 1-.5 1-1s-.5-1-1-1-.99884033.5-.99884033 1 .49884033 1 .99884033 1z"
+                    fill="#ffffff"
+                  />
                 </g>
               </svg>
               View active sprint
             </button>
           </div>
-          <div>
+          <div class="form-control">
             <button class="button js-view-backlog">
-              <svg
-                width="16"
-                height="16"
-                viewBox="0 0 24 24"
-                focusable="false"
-                role="presentation"
-              >
-                <g fill="currentColor">
-                  <path
-                    d="M5 19.002C5 19 17 19 17 19v-2.002C17 17 5 17 5 17v2.002zm-2-2.004C3 15.894 3.895 15 4.994 15h12.012c1.101 0 1.994.898 1.994 1.998v2.004A1.997 1.997 0 0 1 17.006 21H4.994A1.998 1.998 0 0 1 3 19.002v-2.004z"
-                  ></path>
-                  <path d="M5 15h12v-2H5v2zm-2-4h16v6H3v-6z"></path>
-                  <path
-                    d="M7 11.002C7 11 19 11 19 11V8.998C19 9 7 9 7 9v2.002zM5 8.998C5 7.894 5.895 7 6.994 7h12.012C20.107 7 21 7.898 21 8.998v2.004A1.997 1.997 0 0 1 19.006 13H6.994A1.998 1.998 0 0 1 5 11.002V8.998z"
-                  ></path>
-                  <path
-                    d="M5 5v2h12V5H5zm-2-.002C3 3.894 3.895 3 4.994 3h12.012C18.107 3 19 3.898 19 4.998V9H3V4.998z"
-                  ></path>
+              <svg height="21" viewBox="0 0 21 21" width="21">
+                <g
+                  fill="none"
+                  fill-rule="evenodd"
+                  stroke="#ffffff"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  transform="translate(4 6)"
+                >
+                  <path d="m.5.5h12" />
+                  <path d="m.5 4.5h12" />
+                  <path d="m.5 8.5h7" />
+                  <path d="m9.5 8.5h4zm2 2v-4z" />
                 </g>
               </svg>
               View backlog
             </button>
           </div>
           <hr />
-          <div class="button-group">
+          <div class="form-control button-group">
             <button class="button js-expand-open-issues">
-              <svg
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                focusable="false"
-                role="presentation"
-                style="transform: rotate(90deg)"
-              >
-                <path
-                  fill="currentColor"
+              <svg height="21" viewBox="0 0 21 21" width="21">
+                <g
+                  fill="none"
                   fill-rule="evenodd"
-                  d="M14.995 10.995a1 1 0 0 1 0 1.414l-4.593 4.593a.99.99 0 0 1-1.4-1.4l3.9-3.9-3.9-3.9a.99.99 0 0 1 1.4-1.4l4.593 4.593z"
-                ></path>
+                  stroke="#ffffff"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  transform="translate(6 6)"
+                >
+                  <path d="m8.5.5-4 4-4-4" />
+                  <path d="m8.5 4.5-4 4-4-4" />
+                </g>
               </svg>
               Open
             </button>
             <button class="button js-expand-closed-issues">
-              <svg
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                focusable="false"
-                role="presentation"
-                style="transform: rotate(90deg)"
-              >
-                <path
-                  fill="currentColor"
+              <svg height="21" viewBox="0 0 21 21" width="21">
+                <g
+                  fill="none"
                   fill-rule="evenodd"
-                  d="M14.995 10.995a1 1 0 0 1 0 1.414l-4.593 4.593a.99.99 0 0 1-1.4-1.4l3.9-3.9-3.9-3.9a.99.99 0 0 1 1.4-1.4l4.593 4.593z"
-                ></path>
+                  stroke="#ffffff"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  transform="translate(6 6)"
+                >
+                  <path d="m8.5.5-4 4-4-4" />
+                  <path d="m8.5 4.5-4 4-4-4" />
+                </g>
               </svg>
               Closed
             </button>
           </div>
-          <div class="button-group">
+          <div class="form-control button-group">
             <button class="button js-expand-all-issues">
-              <svg
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                focusable="false"
-                role="presentation"
-                style="transform: rotate(90deg)"
-              >
-                <path
-                  fill="currentColor"
+              <svg width="21" height="21" viewBox="0 0 21 21">
+                <g
+                  fill="none"
                   fill-rule="evenodd"
-                  d="M14.995 10.995a1 1 0 0 1 0 1.414l-4.593 4.593a.99.99 0 0 1-1.4-1.4l3.9-3.9-3.9-3.9a.99.99 0 0 1 1.4-1.4l4.593 4.593z"
-                ></path>
+                  stroke="#ffffff"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  transform="translate(6 6)"
+                >
+                  <polyline
+                    points="7.328 5.672 7.328 11.328 1.672 11.328"
+                    transform="rotate(-135 4.5 8.5)"
+                  />
+                  <polyline
+                    points="7.328 1.672 7.328 7.328 1.672 7.328"
+                    transform="rotate(-135 4.5 4.5)"
+                  />
+                </g>
               </svg>
               All
             </button>
             <button class="button js-collapse-all-issues">
-              <svg
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                focusable="false"
-                role="presentation"
-                style="transform: rotate(-90deg)"
-              >
-                <path
-                  fill="currentColor"
+              <svg height="21" viewBox="0 0 21 21" width="21">
+                <g
+                  fill="none"
                   fill-rule="evenodd"
-                  d="M14.995 10.995a1 1 0 0 1 0 1.414l-4.593 4.593a.99.99 0 0 1-1.4-1.4l3.9-3.9-3.9-3.9a.99.99 0 0 1 1.4-1.4l4.593 4.593z"
-                ></path>
+                  stroke="#ffffff"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  transform="translate(6 6)"
+                >
+                  <path d="m8.5.5-4 4-4-4" />
+                  <path d="m8.5 4.5-4 4-4-4" />
+                </g>
               </svg>
               All
             </button>
@@ -203,7 +187,6 @@
               align-items: center;
             "
           >
-            <!--<small id="config">Change the workspace</small>-->
             <a href="https://github.com/klaufel/gojira" target="_blank"
               ><small>Be a productivity raptor!</small></a
             >
@@ -212,17 +195,28 @@
               target="_blank"
               style="line-height: 0"
             >
-              <svg
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                focusable="false"
-                role="presentation"
-                fill="#344563"
-              >
-                <path
-                  d="M11.701 16.7a5.002 5.002 0 1 1 0-10.003 5.002 5.002 0 0 1 0 10.004m8.368-3.117a1.995 1.995 0 0 1-1.346-1.885c0-.876.563-1.613 1.345-1.885a.48.48 0 0 0 .315-.574 8.947 8.947 0 0 0-.836-1.993.477.477 0 0 0-.598-.195 2.04 2.04 0 0 1-1.29.08 1.988 1.988 0 0 1-1.404-1.395 2.04 2.04 0 0 1 .076-1.297.478.478 0 0 0-.196-.597 8.98 8.98 0 0 0-1.975-.826.479.479 0 0 0-.574.314 1.995 1.995 0 0 1-1.885 1.346 1.994 1.994 0 0 1-1.884-1.345.482.482 0 0 0-.575-.315c-.708.2-1.379.485-2.004.842a.47.47 0 0 0-.198.582A2.002 2.002 0 0 1 4.445 7.06a.478.478 0 0 0-.595.196 8.946 8.946 0 0 0-.833 1.994.48.48 0 0 0 .308.572 1.995 1.995 0 0 1 1.323 1.877c0 .867-.552 1.599-1.324 1.877a.479.479 0 0 0-.308.57 8.99 8.99 0 0 0 .723 1.79.477.477 0 0 0 .624.194c.595-.273 1.343-.264 2.104.238.117.077.225.185.302.3.527.8.512 1.58.198 2.188a.473.473 0 0 0 .168.628 8.946 8.946 0 0 0 2.11.897.474.474 0 0 0 .57-.313 1.995 1.995 0 0 1 1.886-1.353c.878 0 1.618.567 1.887 1.353a.475.475 0 0 0 .57.313 8.964 8.964 0 0 0 2.084-.883.473.473 0 0 0 .167-.631c-.318-.608-.337-1.393.191-2.195.077-.116.185-.225.302-.302.772-.511 1.527-.513 2.125-.23a.477.477 0 0 0 .628-.19 8.925 8.925 0 0 0 .728-1.793.478.478 0 0 0-.314-.573"
-                ></path>
+              <svg height="21" viewBox="0 0 21 21" width="21">
+                <g
+                  fill="none"
+                  fill-rule="evenodd"
+                  stroke="#000000"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  transform="translate(2 2)"
+                >
+                  <circle cx="8.5" cy="8.5" r="8" />
+                  <circle cx="8.5" cy="8.5" r="4" />
+                  <path d="m11.5 5.5 2.5-2.5" />
+                  <path
+                    d="m11.5 14 2.5-2.5"
+                    transform="matrix(0 1 -1 0 25.5 0)"
+                  />
+                  <path
+                    d="m3 14 2.5-2.5"
+                    transform="matrix(-1 0 0 -1 8.5 25.5)"
+                  />
+                  <path d="m3 5.5 2.5-2.5" transform="matrix(0 -1 1 0 0 8.5)" />
+                </g>
               </svg>
             </a>
           </div>
