@@ -6,36 +6,38 @@ import {
   syncStorage,
 } from "../../config/repository.js";
 
-const expandOpenTasks = document.getElementById("expandOpenTasks");
-const expandClosedTickets = document.getElementById("expandClosedTickets");
-const expandAllTickets = document.getElementById("expandAllTickets");
-const collapseAllTickets = document.getElementById("collapseAllTickets");
+const searchIssue = document.querySelector(".js-search-issue");
+const searchIssueId = document.querySelector(".js-search-issue-id");
+
+const newIssue = document.querySelector(".js-new-issue");
+const viewSprint = document.querySelector(".js-view-sprint");
+const viewBacklog = document.querySelector(".js-view-backlog");
+
+const expandOpenIssues = document.querySelector(".js-expand-open-issues");
+const expandClosedIssues = document.querySelector(".js-expand-closed-issues");
+const expandAllIssues = document.querySelector(".js-expand-all-issues");
+const collapseAllIssues = document.querySelector(".js-collapse-all-issues");
+
+const header = document.querySelector(".header");
 const actionsContainer = document.querySelector(".actions");
 
-const newTask = document.getElementById("newTask");
-const viewSprint = document.getElementById("viewSprint");
-const viewBacklog = document.getElementById("viewBacklog");
-const viewTask = document.getElementById("viewTask");
-const viewTaskId = document.getElementById("viewTaskId");
-const companyInfo = document.getElementById("companyInfo");
-
-const expandOpenTicketsCode = `document.querySelectorAll('.ghx-swimlane').forEach(item =>
+const expandOpenIssuesCode = `document.querySelectorAll('.ghx-swimlane').forEach(item =>
   item.querySelectorAll('.ghx-swimlane-header.ghx-done')?.length === 0
     ? item.classList.remove('ghx-closed')
     : item.classList.add('ghx-closed')
 )`;
 
-const expandClosedTicketsCode = `document.querySelectorAll('.ghx-swimlane').forEach(item =>
+const expandClosedIssuesCode = `document.querySelectorAll('.ghx-swimlane').forEach(item =>
   item.querySelectorAll('.ghx-swimlane-header.ghx-done')?.length === 0
     ? item.classList.add('ghx-closed')
     : item.classList.remove('ghx-closed')
 )`;
 
-const expandAllTicketsCode = `document.querySelectorAll('.ghx-swimlane').forEach(
+const expandAllIssuesCode = `document.querySelectorAll('.ghx-swimlane').forEach(
   item => item.classList.remove('ghx-closed')
 )`;
 
-const collapseAllTicketsCode = `document.querySelectorAll('.ghx-swimlane').forEach(
+const collapseAllIssuesCode = `document.querySelectorAll('.ghx-swimlane').forEach(
   item => item.classList.add('ghx-closed')
 )`;
 
@@ -57,31 +59,31 @@ const setListeners = ({ basePath, boardId }) => {
       )
     );
 
-    viewTask.addEventListener("submit", () => {
-      const id = viewTaskId?.value;
+    searchIssue.addEventListener("submit", () => {
+      const id = searchIssueId?.value;
       createTab(
         routes("SEARCH").replace("%{basePath}", basePath).replace("%{id}", id)
       );
     });
 
-    newTask.addEventListener("click", () =>
+    newIssue.addEventListener("click", () =>
       createPopup(routes("NEW_ISSUE").replace("%{basePath}", basePath))
     );
 
-    expandOpenTasks.addEventListener("click", () =>
-      executeScript(expandOpenTicketsCode)
+    expandOpenIssues.addEventListener("click", () =>
+      executeScript(expandOpenIssuesCode)
     );
 
-    expandClosedTickets.addEventListener("click", () =>
-      executeScript(expandClosedTicketsCode)
+    expandClosedIssues.addEventListener("click", () =>
+      executeScript(expandClosedIssuesCode)
     );
 
-    expandAllTickets.addEventListener("click", () =>
-      executeScript(expandAllTicketsCode)
+    expandAllIssues.addEventListener("click", () =>
+      executeScript(expandAllIssuesCode)
     );
 
-    collapseAllTickets.addEventListener("click", () =>
-      executeScript(collapseAllTicketsCode)
+    collapseAllIssues.addEventListener("click", () =>
+      executeScript(collapseAllIssuesCode)
     );
   } else {
     actionsContainer.innerHTML = `
@@ -96,10 +98,16 @@ const setListeners = ({ basePath, boardId }) => {
 };
 
 const setHeader = ({ basePath, companyName, companyLogo }) => {
-  companyInfo.innerHTML = `
-      ${companyLogo ? `<img src="${companyLogo}" alt="${companyName}" />` : ""}
-      <h1>${companyName || "JIRA utils extension"}</h1>
-      <span>${basePath || "Needed config yout JIRA domain"}</span>
+  header.innerHTML = `
+      ${
+        companyLogo
+          ? `<img class="header__logo" src="${companyLogo}" alt="${companyName}" />`
+          : ""
+      }
+      <h1 class="header__title">${companyName || "JIRA utils extension"}</h1>
+      <span class="header__description">${
+        basePath || "Needed config JIRA domain"
+      }</span>
     `;
 };
 
@@ -111,3 +119,7 @@ const init = (params) => {
 document.addEventListener("DOMContentLoaded", () =>
   syncStorage(["basePath", "companyName", "companyLogo", "boardId"], init)
 );
+
+document.addEventListener("DOMContentLoaded", () => {
+  searchIssueId.focus();
+});
