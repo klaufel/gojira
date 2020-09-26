@@ -1,4 +1,5 @@
-import { _browser } from "../../config/repository.js";
+import { _browser, syncStorage, createTab } from "../../config/repository.js";
+import routes from "../../config/routes.js";
 
 _browser.runtime.onInstalled.addListener(() => {
   _browser.declarativeContent.onPageChanged.removeRules(undefined, () => {
@@ -14,3 +15,19 @@ _browser.runtime.onInstalled.addListener(() => {
     ]);
   });
 });
+
+const initOmnibox = ({ basePath }) => {
+  if (basePath) {
+    _browser.omnibox.onInputEntered.addListener((input) => {
+      createTab(
+        routes("SEARCH")
+          .replace("%{basePath}", basePath)
+          .replace("%{id}", input)
+      );
+    });
+  }
+};
+
+document.addEventListener("DOMContentLoaded", () =>
+  syncStorage(["basePath"], initOmnibox)
+);
