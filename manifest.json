@@ -4,6 +4,7 @@
   "description": "JIRA browser extension to provides useful tools to manage your dashboards and direct links to your most used JIRA dashboards.",
   "permissions": ["activeTab", "declarativeContent", "storage"],
   "options_page": "src/modules/options/options.html",
+  "omnibox": { "keyword": "gojira" },
   "background": {
     "page": "src/modules/background/background.html"
   },
