@@ -1,5 +1,5 @@
-import { _browser } from "../../config/repository.js";
-import { INPUT_FORM, INPUT_KEYS } from "../../config/index.js";
+import { _browser, syncStorage } from "../../config/repository.js";
+import { INPUT_FORM, INPUT_KEYS } from "../../config/form.js";
 
 const configForm = document.getElementById("configForm");
 const formOptions = document.getElementById("form");
@@ -26,12 +26,10 @@ const genForm = (values) => {
           />
         </div> 
       `
-  );
+  ).join("");
 };
 
-const loadConfig = () => {
-  _browser.storage.sync.get(INPUT_KEYS, (values) => genForm(values));
-};
+const loadConfig = () => syncStorage(INPUT_KEYS, (values) => genForm(values));
 
 const saveConfig = () => {
   configForm.addEventListener("submit", (event) => {
