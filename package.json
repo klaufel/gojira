@@ -1,17 +1,26 @@
 {
   "name": "gojira",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "JIRA browser extension to provides useful tools to manage your dashboards and direct links to your most used JIRA dashboards.",
   "main": "",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "zip": "zip -r gojira.zip ."
+    "zip": "zip -r gojira-$npm_package_version.zip ."
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/klaufel/gojira.git"
   },
-  "keywords": [],
+  "keywords": [
+    "jira",
+    "chrome",
+    "extension",
+    "jira-issue",
+    "jira-ticket",
+    "chrome-extension",
+    "atlassian",
+    "atlassian-jira"
+  ],
   "author": "Juan Carlos Ruiz <klaufel@gmail.com>",
   "license": "ISC",
   "bugs": {

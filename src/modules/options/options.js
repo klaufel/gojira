@@ -1,8 +1,8 @@
 import { _browser, syncStorage } from "../../config/repository.js";
 import { INPUT_FORM, INPUT_KEYS } from "../../config/form.js";
 
-const configForm = document.getElementById("configForm");
-const formOptions = document.getElementById("form");
+const form = document.querySelector(".form");
+const formOptions = document.querySelector(".form__options");
 const messages = document.querySelector(".messages");
 
 const getDomainUrl = (url) => {
@@ -32,7 +32,7 @@ const genForm = (values) => {
 const loadConfig = () => syncStorage(INPUT_KEYS, (values) => genForm(values));
 
 const saveConfig = () => {
-  configForm.addEventListener("submit", (event) => {
+  form.addEventListener("submit", (event) => {
     event.preventDefault();
     messages.innerHTML = "";
 
