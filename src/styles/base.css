@@ -6,6 +6,7 @@
   --c-tertiary: rgb(76, 154, 255);
   --c-neutral-primary: #f4f5f7;
   --c-neutral-secondary: #dfe1e6;
+  --c-alert-success: #008000;
 
   --ff-base: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
@@ -58,7 +59,7 @@ hr {
 
 /* Wrapper */
 .wrapper {
-  --w-wrapper: 240px;
+  --w-wrapper: 292px;
   display: flex;
   flex-direction: column;
   width: var(--w-wrapper);
@@ -73,9 +74,10 @@ hr {
 /* Button */
 .button {
   --bg-button: var(--c-primary);
-  --c-button: var(--c-light);
-  --p-button: var(--s-s) var(--s-m);
   --br-button: var(--br-base);
+  --c-button: var(--c-light);
+  --h-button: var(--s-xxl);
+  --p-button: var(--s-s) var(--s-m);
   align-items: center;
   background: var(--bg-button);
   border-radius: var(--br-button);
@@ -86,10 +88,10 @@ hr {
   display: inline-flex;
   font-size: inherit;
   font-weight: 500;
+  height: var(--h-button);
   justify-content: center;
   line-height: 1;
   margin: 0;
-  width: 100%;
   outline: none;
   padding: var(--p-button);
   text-decoration: none;
@@ -97,6 +99,7 @@ hr {
   transition: background 0.1s ease-out, box-shadow 0.15s ease-out;
   vertical-align: middle;
   white-space: nowrap;
+  width: 100%;
 }
 
 .button:hover {
@@ -105,6 +108,10 @@ hr {
 
 .button:focus {
   box-shadow: 0 0 0 2px var(--c-tertiary);
+}
+
+.button svg {
+  margin-right: var(--s-s);
 }
 
 /* Input */
@@ -213,7 +220,7 @@ hr {
 }
 
 .messages {
-  color: #008000;
+  color: var(--c-alert-success);
   font-weight: 700;
   padding-top: var(--s-s);
 }
